@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ajay Thapa Magar · Editor, Filmmaker, Creator · Sydney</title>
+<meta name="description" content="Ajay Thapa Magar is a Sydney-based video editor, filmmaker and creator. Commercials, music videos and documentaries for clients, plus his own films and tutorials for 60K YouTube subscribers.">
+<link rel="canonical" href="https://ajaythapa.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ajaythapa.github.io/">
+<meta property="og:title" content="Ajay Thapa Magar · Editor, Filmmaker, Creator">
+<meta property="og:description" content="Sydney-based video editor, filmmaker and creator. Commercials, music videos and documentaries for clients, plus my own films and tutorials on YouTube.">
+<meta property="og:image" content="https://ajaythapa.github.io/images/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1C1814">
+<link rel="icon" href="images/ajxt-arrow.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&family=Vollkorn:wght@500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+@font-face { font-family: "Hybrid Chill"; src: url("fonts/HybridChill-Regular.otf") format("opentype"); font-display: swap; }
+:root {
+  --paper: #1C1814;   /* warm near-black: the Pixieset warmth without the glare of a light page */
+  --card: #27211B;
+  --ink: #D9D4C5;     /* cream body text */
+  --head: #F1ECDD;
+  --brown: #C8A27C;   /* tan accent: buttons, links, pencil notes */
+  --on-accent: #1C1814;
+  --orange: #E7A01A;  /* the logo arrow */
+  --line: #3A332B;
+  --muted: #A69F8D;   /* on paper: 6.9:1 */
+  --serif: "Vollkorn", Georgia, "Times New Roman", serif;
+  --body: "Work Sans", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --mono: "Courier Prime", "Courier New", monospace;
+  --gutter: clamp(16px, 4vw, 64px);
+  --r: 8px;
+}
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; scrollbar-color: #4A4238 var(--paper); }
+.strip, .tl-scroll { scrollbar-width: thin; scrollbar-color: #4A4238 transparent; }
+body { background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.65 var(--body); -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+ul { list-style: none; padding: 0; }
+:focus-visible { outline: 2px solid var(--brown); outline-offset: 3px; }
+
+h1, h2, h3, .num { font-family: var(--serif); font-weight: 500; letter-spacing: -0.015em; line-height: 1.06; color: var(--head); font-variant-numeric: lining-nums; }
+h1 { font-size: clamp(3rem, 7.4vw, 6.5rem); line-height: .98; letter-spacing: -0.025em; }
+h2 { font-size: clamp(2.1rem, 4.6vw, 3.75rem); text-wrap: balance; }
+h3 { font-size: clamp(1.4rem, 2vw, 1.75rem); }
+.eyebrow { font: 700 .72rem/1.5 var(--mono); letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
+.wrap { padding: 0 var(--gutter); max-width: 1560px; margin: 0 auto; }
+section { padding: clamp(72px, 10vw, 150px) 0; }
+
+.btn { display: inline-flex; align-items: center; gap: .5em; padding: 1.05em 1.9em; border-radius: 999px; font: 700 .76rem/1 var(--mono); letter-spacing: .16em; text-transform: uppercase; text-decoration: none; border: 1.5px solid var(--brown); color: var(--brown); transition: background .2s, color .2s, border-color .2s; }
+.btn:hover { background: var(--brown); color: var(--on-accent); }
+.btn.solid { background: var(--brown); color: var(--on-accent); }
+.btn.solid:hover { background: var(--head); border-color: var(--head); }
+.hero .btn:not(.solid), .contact .btn:not(.solid) { border-color: #fff; color: #fff; }
+.hero .btn:not(.solid):hover, .contact .btn:not(.solid):hover { background: #fff; color: var(--ink); }
+
+/* nav */
+.nav { position: fixed; inset: 0 0 auto 0; z-index: 10; height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 var(--gutter); background: rgba(28,24,20,.86); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; font: 500 1.05rem var(--serif); letter-spacing: .12em; color: var(--head); }
+.brand img { height: 26px; width: auto; }
+.nav ul { display: flex; align-items: center; gap: clamp(16px, 2.4vw, 36px); font: 700 .72rem var(--mono); letter-spacing: .2em; text-transform: uppercase; }
+.nav ul a { text-decoration: none; }
+.nav ul a:not(.btn):hover { color: var(--brown); }
+.nav .btn { padding: .85em 1.4em; font-size: .7rem; }
+
+/* hero: an inset rounded photo, like a print laid on the page */
+.hero { position: relative; margin: 64px 12px 0; border-radius: var(--r); overflow: hidden; min-height: calc(100svh - 76px); display: flex; align-items: flex-end; padding: 120px 0 clamp(32px, 5vw, 64px); color: #fff; }
+.hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 30%; }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(32,24,16,.9) 0%, rgba(32,24,16,.5) 38%, transparent 70%); }
+.hero .wrap { position: relative; z-index: 2; width: 100%; }
+.hero .eyebrow, .hero h1 { color: #fff; }
+.hero h1 { margin: .2em 0 .25em; }
+.hero .lede { max-width: 36em; font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.5; }
+.hero .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 2em; }
+.frame-note { position: absolute; z-index: 2; right: clamp(16px, 3vw, 40px); top: 20px; font: 700 .66rem var(--mono); letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.88); }
+
+/* proof strip */
+.proof { border-bottom: 1px solid var(--line); }
+.proof ul { display: grid; grid-template-columns: repeat(4, 1fr); }
+.proof li { padding: clamp(24px, 3vw, 44px) 24px clamp(24px, 3vw, 44px) 0; }
+.proof li + li { padding-left: 24px; border-left: 1px solid var(--line); }
+.num { display: block; font-size: clamp(2rem, 4.4vw, 4rem); font-weight: 600; }
+.proof .num { font-size: clamp(1.7rem, 3.4vw, 3.25rem); white-space: nowrap; }
+.proof small { display: block; margin-top: .6em; font-size: .9rem; color: var(--muted); line-height: 1.35; }
+
+/* two sides */
+.sides h2 { max-width: 14em; }
+.sides .cols { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 80px); margin-top: clamp(32px, 5vw, 64px); }
+.sides .cols > div { border-top: 2px solid var(--head); padding-top: 20px; }
+.sides .cols > div + div { border-color: var(--orange); }
+.sides p { margin-top: .8em; max-width: 34em; }
+
+/* work */
+.work { padding-top: 0; }
+.work header { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 40px; margin-bottom: clamp(28px, 4vw, 56px); padding-top: 28px; border-top: 1px solid var(--line); }
+.work header h2 { margin-top: .3em; }
+.work header > p { max-width: 26em; color: var(--muted); }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px, 4.5vw, 72px) clamp(12px, 1.4vw, 20px); }
+.card figure { aspect-ratio: 16 / 9; overflow: hidden; border-radius: var(--r); background: var(--card); }
+.card img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+.card:hover img { transform: scale(1.035); }
+.card .body { padding-top: 18px; display: grid; grid-template-columns: 1fr auto; gap: 6px 24px; align-items: baseline; }
+.card .kind { grid-column: 2; grid-row: 1; font: 700 .7rem var(--mono); letter-spacing: .18em; text-transform: uppercase; color: var(--muted); text-align: right; }
+.card h3 { grid-column: 1; grid-row: 1; }
+.card .desc { grid-column: 1 / -1; max-width: 40em; }
+.tags { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; font-size: .8rem; font-weight: 500; }
+.tags li { padding: .3em .9em; border: 1px solid #5E574A; border-radius: 999px; }
+.tags .shot { background: var(--orange); border-color: var(--orange); color: #1E1A12; }
+.tags a { text-decoration: none; }
+.tags a:hover { color: var(--brown); }
+
+.card.feature { grid-column: 1 / -1; }
+.card.feature figure { aspect-ratio: 21 / 9; }
+.card.feature h3 { font-size: clamp(1.9rem, 3.4vw, 2.9rem); }
+
+/* contact-sheet strip of frames that are not tied to a listed project */
+.frames { padding-top: 0; }
+.frames h2 { margin: .3em 0 .9em; font-size: clamp(1.6rem, 3vw, 2.4rem); }
+.strip { display: flex; gap: 10px; overflow-x: auto; padding: 0 var(--gutter) 14px; scroll-snap-type: x proximity; counter-reset: frame; }
+.strip li { flex: none; scroll-snap-align: start; counter-increment: frame; }
+.strip li::after { content: counter(frame, decimal-leading-zero); display: block; margin-top: 8px; font: 700 .66rem var(--mono); letter-spacing: .16em; color: var(--muted); }
+.strip img { height: clamp(180px, 26vw, 340px); width: auto; max-width: none; border-radius: var(--r); }
+
+/* channel: the creator side sits on its own white card */
+.channel { background: var(--card); margin: 0 12px; border-radius: var(--r); }
+.channel h2 { margin: .3em 0 .45em; }
+.channel .lede { max-width: 36em; font-size: 1.15rem; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(10px, 1.2vw, 16px); margin: clamp(36px, 5vw, 64px) 0 12px; }
+.stats a { display: block; padding: 26px 24px 22px; background: var(--paper); border-radius: var(--r); text-decoration: none; transition: background .2s; }
+.stats a:hover { background: #342C24; }
+.stats small { display: block; margin-top: .7em; font-size: .95rem; }
+.fine { font-size: .8rem; color: var(--muted); }
+.channel .cols { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(40px, 7vw, 120px); margin-top: clamp(48px, 7vw, 96px); }
+.channel h3 { font: 700 .72rem var(--mono); letter-spacing: .22em; text-transform: uppercase; padding-bottom: 14px; border-bottom: 1.5px solid var(--head); }
+.rows li { border-bottom: 1px solid var(--line); }
+.rows a, .rows div { display: grid; grid-template-columns: 5.2em 1fr auto; gap: 16px; align-items: baseline; padding: 18px 0; text-decoration: none; }
+.rows .num { font-size: 1.9rem; }
+.rows b { font-weight: 600; display: block; }
+.rows span { color: var(--muted); font-size: .9rem; }
+.rows .num { color: var(--head); }
+.rows b { color: var(--ink); }
+.rows i { font-style: normal; color: var(--brown); }
+.rows a:hover b { text-decoration: underline; text-decoration-color: var(--orange); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.rows.brands div { grid-template-columns: 7.5em 1fr; }
+.rows.brands .num { font-size: 1.4rem; }
+.ways { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 28px; margin: 28px 0 32px; font-size: .95rem; }
+.ways b { display: block; font-weight: 600; }
+.channel .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* about */
+.about .top { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 80px); align-items: center; }
+.about .top img { border-radius: var(--r); }
+.about h2 { margin: .3em 0 .5em; }
+.about .top p + p { margin-top: 1em; }
+.about .top p { max-width: 34em; }
+
+/* career drawn as an edit timeline: one client track, one own track */
+.tl-scroll { overflow-x: auto; margin-top: clamp(48px, 7vw, 96px); direction: rtl; } /* rtl: on phones the strip opens at "now", not 2013 */
+.tl { direction: ltr; position: relative; min-width: 760px; padding-bottom: 4px; font-variant-numeric: tabular-nums; }
+.tl > div { display: grid; grid-template-columns: 76px repeat(14, 1fr); align-items: center; }
+.tl-years { font: 700 .7rem var(--mono); color: var(--muted); padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+.tl-years span { border-left: 1px solid var(--line); padding-left: 6px; }
+.tl-track { margin-top: 8px; background: repeating-linear-gradient(to right, transparent 0 calc(100% / 14 - 1px), var(--line) 0 calc(100% / 14)) 76px 0 / calc(100% - 76px) 100% no-repeat, var(--card); }
+.tl-track > span { font: 700 .66rem var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--muted); padding-left: 4px; background: var(--paper); align-self: stretch; display: flex; align-items: center; }
+.clip { height: 48px; margin: 5px 2px; padding: 0 12px; display: flex; align-items: center; border-radius: 5px; background: var(--brown); color: var(--on-accent); font-size: .82rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.clip.own { background: var(--orange); color: #1E1A12; }
+.tl::after { content: "NOW"; position: absolute; right: 0; top: 22px; bottom: 0; width: 2px; background: var(--head); color: var(--head); font: 700 .62rem var(--mono); letter-spacing: .14em; text-indent: -3.4em; line-height: 0; }
+
+.jobs { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 3vw, 48px); margin-top: clamp(36px, 5vw, 64px); }
+.jobs h3 { font-size: 1.3rem; margin: .5em 0 .15em; line-height: 1.2; }
+.jobs .where { color: var(--muted); font-size: .95rem; }
+.jobs p:last-child { margin-top: .9em; font-size: .98rem; }
+.kit { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 3vw, 48px); margin-top: clamp(48px, 6vw, 80px); padding-top: 28px; border-top: 1px solid var(--line); }
+.kit li { padding: .28em 0; }
+.kit .eyebrow { margin-bottom: 12px; }
+
+/* contact: a second inset photo to close the page */
+.contact { position: relative; margin: 0 12px 12px; border-radius: var(--r); overflow: hidden; padding: clamp(90px, 14vw, 200px) 0 0; color: #fff; }
+.contact > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.contact::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to bottom, rgba(26,26,26,.5), rgba(26,26,26,.82)); }
+.contact .wrap { position: relative; z-index: 2; }
+.contact h2, .contact .eyebrow { color: #fff; }
+.contact h2 { font-size: clamp(2.6rem, 7vw, 6rem); max-width: 11em; margin-top: .2em; }
+.contact .lede { margin: 1.2em 0 2em; font-size: 1.2rem; max-width: 32em; }
+.contact .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; margin-top: clamp(80px, 12vw, 180px); padding: 24px 0; border-top: 1px solid rgba(255,255,255,.3); font-size: .9rem; }
+footer ul { display: flex; gap: 24px; }
+footer a { text-decoration: none; }
+footer a:hover { color: var(--orange); }
+
+/* loops: a silent clip sits over each still and fades in while it plays */
+.card figure { position: relative; }
+figure video, .hero > video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .45s; }
+.hero > video { object-position: 60% 30%; }
+.live > video { opacity: 1; }
+.card figure:has(video)::after { content: "\25B6  LOOP"; position: absolute; left: 12px; bottom: 12px; padding: 5px 9px; border-radius: 3px; background: rgba(20,16,12,.62); color: #fff; font: 700 .6rem var(--mono); letter-spacing: .16em; transition: opacity .3s; }
+.card figure.live::after { opacity: 0; }
+
+/* margin notes, in pencil */
+.note { grid-column: 1 / -1; margin-top: 10px; max-width: 26em; font: 400 1.9rem/1.15 "Hybrid Chill", var(--body); letter-spacing: -.06em; word-spacing: .12em; color: var(--brown); transform: rotate(-1.2deg); transform-origin: left; }
+.note::before { content: "\21B3  "; }
+
+/* screening room: client work plays in the deepest black on the page so the frames glow */
+.work.screening { margin: 0 12px; border-radius: var(--r); padding: clamp(56px, 7vw, 110px) 0; background: #0E0C0A; color: #E9E5D8; }
+.screening h2, .screening h3 { color: #F4F1E6; }
+.screening .eyebrow, .screening .kind, .screening header > p { color: #A9A391; }
+.screening header { border-top: 0; padding-top: 0; }
+.screening .card figure { background: #1A1612; }
+.screening .note, .screening .tags a:hover { color: #E7B95A; }
+.screening + .work { padding-top: clamp(72px, 10vw, 150px); }
+.screening + .work header { border-top: 0; padding-top: 0; }
+
+/* playhead: scroll position as a line under the nav, with a running timecode readout in it */
+.playhead { position: fixed; top: 64px; left: 0; z-index: 10; height: 2px; width: calc(var(--p, 0) * 100%); background: var(--orange); pointer-events: none; }
+.tc { margin: 0 auto 0 28px; font: 700 .7rem var(--mono); letter-spacing: .1em; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tc::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 8px; border-radius: 50%; background: var(--orange); }
+@media (max-width: 1100px) { .brand span { display: none; } }
+
+@media (max-width: 860px) {
+  .nav ul li:not(:last-child) { display: none; }
+  .frame-note { display: none; }
+  .hero > img { object-position: 66% 30%; } /* portrait crop: keep the face */
+  .proof ul { grid-template-columns: 1fr 1fr; }
+  .proof li:nth-child(3) { padding-left: 0; border-left: 0; }
+  .proof li:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .sides .cols, .grid, .channel .cols, .about .top, .jobs { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: 1fr 1fr; }
+  .kit { grid-template-columns: 1fr 1fr; }
+  .card.feature figure { aspect-ratio: 16 / 9; }
+  .card .body { grid-template-columns: 1fr; }
+  .card .kind { grid-column: 1; grid-row: auto; text-align: left; order: -1; }
+  .card h3 { grid-row: auto; }
+}
+@media (max-width: 480px) {
+  .brand span { display: none; }
+  .rows a { grid-template-columns: 4.4em 1fr; }
+  .rows a i { display: none; }
+  .ways { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .card img { transition: none; }
+  .card:hover img { transform: none; }
+  figure video, .hero > video { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <a class="brand" href="#top" aria-label="Ajay T. Magar, back to top"><img src="images/ajxt-mark-dark.svg" alt="" width="661" height="654"><span>AJAY THAPA MAGAR</span></a>
+  <span class="tc" aria-hidden="true">00:00:00:00</span>
+  <ul>
+    <li><a href="#clients">Client work</a></li>
+    <li><a href="#own">Own films</a></li>
+    <li><a href="#channel">Channel</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a class="btn solid" href="#contact">Get in touch</a></li>
+  </ul>
+</nav>
+<div class="playhead" aria-hidden="true"></div>
+
+<main id="top">
+
+<header class="hero">
+  <img src="images/hero.jpg" alt="Ajay in a cap and purple hoodie working on a laptop in a warm-lit room with plants and a guitar amp." width="2400" height="1350" fetchpriority="high">
+  <video muted loop playsinline preload="none" src="loops/hero.mp4" aria-hidden="true" tabindex="-1"></video>
+  <p class="frame-note">Frame from <em>Aadima</em></p>
+  <div class="wrap">
+    <p class="eyebrow">Editor · Filmmaker · Creator &nbsp;/&nbsp; Sydney, Australia</p>
+    <h1>Ajay Thapa Magar</h1>
+    <p class="lede">I edit commercials, music videos and documentaries for other people. I also shoot, cut and publish my own films for 60K subscribers on YouTube. Both are rooted in emotion and pace.</p>
+    <p class="cta"><a class="btn solid" href="#clients">See the work</a> <a class="btn" href="#contact">Get in touch</a></p>
+  </div>
+</header>
+
+<div class="proof">
+  <ul class="wrap">
+    <li><span class="num">9+ yrs</span><small>in production and post</small></li>
+    <li><span class="num">14M–40M+</span><small>views on music videos I edited</small></li>
+    <li><span class="num">60.4K</span><small>YouTube subscribers</small></li>
+    <li><span class="num">2.29M</span><small>views on my own channel</small></li>
+  </ul>
+</div>
+
+<section class="sides">
+  <div class="wrap">
+    <h2>Cinematic pacing, digital-first intent.</h2>
+    <div class="cols">
+      <div>
+        <p class="eyebrow">For clients</p>
+        <p>I'm the editor behind launch films, TVCs, music videos and a documentary pilot for teams in Nepal and the US. I take a project from rough cut through colour to final delivery.</p>
+      </div>
+      <div>
+        <p class="eyebrow">For myself</p>
+        <p>I write, shoot, grade and publish my own films and tutorials. My work has lived on YouTube and social, not broadcast, so I learned pacing from an audience that can leave at any second.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="work screening" id="clients">
+  <div class="wrap">
+    <header>
+      <div>
+        <p class="eyebrow">01 / Client work</p>
+        <h2>Cut for clients</h2>
+      </div>
+      <p>My role on everything in this section: editor.</p>
+    </header>
+    <div class="grid">
+
+      <article class="card feature">
+        <figure><img src="images/bipul.jpg" alt="A man in a fur hat lit by a torch flame against dark snow mountains at night." width="2200" height="886" loading="lazy"></figure>
+        <div class="body">
+          <h3>Bipul Chettri</h3>
+          <p class="kind">Official music video</p>
+          <p class="desc">Shot in Manang, Nepal. A story of longing and memory, following a man searching for meaning in isolation.</p>
+          <ul class="tags"><li>Editor</li><li>2M+ views</li></ul>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="images/nsl.jpg" alt="A smiling fan waves a flag in golden stadium light and smoke." width="1600" height="900" loading="lazy"><video muted loop playsinline preload="none" src="loops/nsl.mp4" aria-hidden="true" tabindex="-1"></video></figure>
+        <div class="body">
+          <h3>Nepal Super League</h3>
+          <p class="kind">Official launch video</p>
+          <p class="desc">Launch campaign for Nepal's premier football league. Focused on rhythm, scale and emotional payoff.</p>
+          <ul class="tags"><li>Editor</li></ul>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="images/realme.jpg" alt="Two friends laugh while taking a selfie under carved stone arches." width="1600" height="900" loading="lazy"></figure>
+        <div class="body">
+          <h3>Realme 11 Pro</h3>
+          <p class="kind">Launch campaign</p>
+          <p class="desc">Cut to emphasise youthful energy and movement, balancing commercial clarity with cinematic pacing.</p>
+          <ul class="tags"><li>Editor</li></ul>
+          <p class="note">I broke this whole edit down on my channel. 76K people watched. <a href="https://www.youtube.com/watch?v=TKc2LkKi4Ro" target="_blank" rel="noopener">See it ↗</a></p>
+        </div>
+      </article>
+
+      <article class="card feature">
+        <figure><img src="images/tuborg.jpg" alt="Overhead shot of a Holi crowd covered in colour, lifting a woman holding a Tuborg can." width="2200" height="930" loading="lazy"></figure>
+        <div class="body">
+          <h3>Tuborg</h3>
+          <p class="kind">TVC · Holi campaign</p>
+          <p class="desc">High-energy Holi campaign focused on rhythm, colour and celebration.</p>
+          <ul class="tags"><li>Editor</li></ul>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="images/sxsw.jpg" alt="A singer with an acoustic guitar on a festival stage under teal lights, seen over the crowd." width="1600" height="881" loading="lazy"><video muted loop playsinline preload="none" src="loops/sxsw.mp4" aria-hidden="true" tabindex="-1"></video></figure>
+        <div class="body">
+          <h3>SXSW 2024</h3>
+          <p class="kind">Festival highlight film</p>
+          <p class="desc">Highlight film from live performances, interviews and event coverage, delivered for Instagram and social.</p>
+          <ul class="tags"><li>Editor</li></ul>
+          <p class="note">One shoot, one film, then 30 to 40 cutdowns out of the same footage.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="images/voicegift.jpg" alt="Overhead view of a toddler asleep in a cot holding a small voice recorder, surrounded by soft toys." width="1600" height="900" loading="lazy"><video muted loop playsinline preload="none" src="loops/voicegift.mp4" aria-hidden="true" tabindex="-1"></video></figure>
+        <div class="body">
+          <h3>VoiceGift</h3>
+          <p class="kind">Product film</p>
+          <p class="desc">Preserving voices for tomorrow. A story about memory, comfort and the moments that outlive us.</p>
+          <ul class="tags"><li>Editor</li></ul>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="images/bde.jpg" alt="A bearded man in a work jacket gestures during an interview inside a timber-framed building by the sea." width="1600" height="738" loading="lazy"><video muted loop playsinline preload="none" src="loops/bde.mp4" aria-hidden="true" tabindex="-1"></video></figure>
+        <div class="body">
+          <h3>Building Down East</h3>
+          <p class="kind">TV pilot · Documentary series</p>
+          <p class="desc">Episode-format documentary following the launch of a rural business in Down East Maine. Interwoven character arcs, interview-led narrative and observational pacing.</p>
+          <ul class="tags"><li>Editor</li></ul>
+          <p class="note">I cut the pilot materials and the series trailer.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="images/naked.jpg" alt="Close-up of a woman with a dark fringe and red hoop earrings in warm low light." width="1600" height="670" loading="lazy"></figure>
+        <div class="body">
+          <h3>Naked</h3>
+          <p class="kind">Narrative music film · Neetesh Jung Kunwar</p>
+          <p class="desc">A tension-driven narrative built around betrayal, greed and consequence.</p>
+          <ul class="tags"><li>Editor</li></ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="work" id="own">
+  <div class="wrap">
+    <header>
+      <div>
+        <p class="eyebrow">02 / Own films</p>
+        <h2>Shot and cut by me</h2>
+      </div>
+      <p>Personal films and brand collaborations where I was behind the camera as well as in the edit.</p>
+    </header>
+    <div class="grid">
+
+      <article class="card feature">
+        <figure><img src="images/run.jpg" alt="A runner in a white long-sleeve top mid-stride against a cloudy sky and green hills." width="2200" height="1238" loading="lazy" style="object-position: 50% 30%"><video muted loop playsinline preload="none" src="loops/run.mp4" aria-hidden="true" tabindex="-1"></video></figure>
+        <div class="body">
+          <h3>Run</h3>
+          <p class="kind">A cinematic shot framework</p>
+          <p class="desc">A short study on shooting motion for social.</p>
+          <ul class="tags"><li class="shot">Editor &amp; cinematographer</li><li>450,000+ views</li><li>28,600+ engagements</li></ul>
+          <p class="note">It ends on one line: if you're ever stuck, just run.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="images/nagthali.jpg" alt="Last light on a Himalayan range above a dark ridge, with a tiny figure standing on the hill." width="1600" height="900" loading="lazy"><video muted loop playsinline preload="none" src="loops/nagthali.mp4" aria-hidden="true" tabindex="-1"></video></figure>
+        <div class="body">
+          <h3>Nagthali</h3>
+          <p class="kind">Narrative short</p>
+          <p class="desc">A journal-style narrative on the idea that escape doesn't require distance. A few hours from the city, the mountains offer silence, clarity and a shift in perspective.</p>
+          <ul class="tags"><li class="shot">Editor &amp; cinematographer</li></ul>
+          <p class="note">It opens on one line: “I just wanted some air, so I didn't go far.”</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="images/manang.jpg" alt="A man in a leather hat and woven poncho stares into the camera in a snowy mountain forest." width="1600" height="900" loading="lazy"></figure>
+        <div class="body">
+          <h3>Manang</h3>
+          <p class="kind">Short film</p>
+          <p class="desc">A winter character study set in the mountains, built on location to shape tone, tension and atmosphere.</p>
+          <ul class="tags"><li class="shot">Editor &amp; cinematographer</li></ul>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="images/aadima.jpg" alt="Hands lifting a black and white sneaker out of tissue paper in a shoebox." width="1600" height="900" loading="lazy"><video muted loop playsinline preload="none" src="loops/aadima.mp4" aria-hidden="true" tabindex="-1"></video></figure>
+        <div class="body">
+          <h3>Aadima</h3>
+          <p class="kind">Brand collaboration</p>
+          <p class="desc">A short film on buying with intention and choosing quality over impulse.</p>
+          <ul class="tags"><li class="shot">Editor &amp; cinematographer</li><li>110K+ views</li><li>3K+ engagements</li></ul>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="images/ruslan.jpg" alt="A singer with curly hair performs with eyes closed in a small studio." width="1593" height="895" loading="lazy"></figure>
+        <div class="body">
+          <h3>Ruslan Studios</h3>
+          <p class="kind">Paradygm Music Sessions</p>
+          <p class="desc">A sponsored acoustic series with new artists performing originals and covers in an intimate setting.</p>
+          <ul class="tags"><li class="shot">Editor &amp; DP</li><li>18 episodes</li></ul>
+          <p class="note">Filmed, cut and mixed all 18 myself.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="frames">
+  <div class="wrap">
+    <p class="eyebrow">More frames</p>
+    <h2>From shoots that didn't make the list.</h2>
+  </div>
+  <ul class="strip" tabindex="0" aria-label="More frames, scroll sideways">
+    <li><img src="images/more-01.jpg" alt="A herd of deer running across grassland, streaked with motion blur." loading="lazy" height="340"></li>
+    <li><img src="images/more-02.jpg" alt="An older man's face lit orange by torchlight, a younger man behind him." loading="lazy" height="340"></li>
+    <li><img src="images/more-03.jpg" alt="Sunrise haze over a wide forest canopy." loading="lazy" height="340"></li>
+    <li><img src="images/more-04.jpg" alt="A porter with a wicker basket crossing a suspension footbridge." loading="lazy" height="340"></li>
+    <li><img src="images/more-05.jpg" alt="A crowd carrying burning torches at a night festival." loading="lazy" height="340"></li>
+    <li><img src="images/more-06.jpg" alt="A pickup truck kicking up dust across a sandy riverbed." loading="lazy" height="340"></li>
+    <li><img src="images/more-07.jpg" alt="A woman tending a fire in a dim village kitchen." loading="lazy" height="340"></li>
+    <li><img src="images/more-08.jpg" alt="String lights against a stormy dusk sky above dark hills." loading="lazy" height="340"></li>
+    <li><img src="images/more-09.jpg" alt="Aerial view of a hillside village above drifting cloud." loading="lazy" height="340"></li>
+    <li><img src="images/more-10.jpg" alt="Two friends laughing beside a campfire at dusk." loading="lazy" height="340"></li>
+    <li><img src="images/more-11.jpg" alt="A rider on a blue motorbike, trees blurring past." loading="lazy" height="340"></li>
+    <li><img src="images/more-12.jpg" alt="A deep red sunset behind layered hills." loading="lazy" height="340"></li>
+  </ul>
+</section>
+
+<section class="channel" id="channel">
+  <div class="wrap">
+    <p class="eyebrow">03 / The channel</p>
+    <h2>Teaching the craft.<br>Showing the process.</h2>
+    <p class="lede">I make films, teach editing in Nepali and English, and share the tools I use along the way. It keeps me close to what audiences respond to, and it's where brands meet me as a creator.</p>
+
+    <div class="stats">
+      <a href="https://www.youtube.com/@AjayThapaMagar" target="_blank" rel="noopener"><span class="num">60.4K</span><small>YouTube subscribers ↗</small></a>
+      <a href="https://www.instagram.com/ajaytm43/" target="_blank" rel="noopener"><span class="num">31.3K</span><small>Instagram followers ↗</small></a>
+      <a href="https://www.tiktok.com/@ajaytm43" target="_blank" rel="noopener"><span class="num">12.5K</span><small>TikTok followers ↗</small></a>
+      <a href="https://www.youtube.com/@AjayThapaMagar" target="_blank" rel="noopener"><span class="num">2.29M</span><small>lifetime YouTube views, 66 videos ↗</small></a>
+    </div>
+    <p class="fine">Public platform counts as of 2 October 2026.</p>
+
+    <div class="cols">
+      <div>
+        <h3>Most watched</h3>
+        <ul class="rows">
+          <li><a href="https://www.youtube.com/watch?v=Igez2kJ3E8c" target="_blank" rel="noopener"><span class="num">196K</span><span><b>Resolve 18 beginner crash course</b>Nepali tutorial</span><i>↗</i></a></li>
+          <li><a href="https://www.youtube.com/watch?v=VT60zXTNcXA" target="_blank" rel="noopener"><span class="num">172K</span><span><b>5 video editing tips for beginners</b>Nepali tutorial</span><i>↗</i></a></li>
+          <li><a href="https://www.youtube.com/watch?v=_KLPaMIz5ao" target="_blank" rel="noopener"><span class="num">114K</span><span><b>Premiere Pro beginner essentials</b>Nepali tutorial</span><i>↗</i></a></li>
+          <li><a href="https://www.youtube.com/watch?v=TKc2LkKi4Ro" target="_blank" rel="noopener"><span class="num">76K</span><span><b>How I edit commercials for realme Nepal</b>Commercial editing breakdown</span><i>↗</i></a></li>
+          <li><a href="https://www.youtube.com/watch?v=xJhR5UQrPgU" target="_blank" rel="noopener"><span class="num">10K</span><span><b>I made a plugin for you.</b>Product demonstration</span><i>↗</i></a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Brand partnerships</h3>
+        <ul class="rows brands">
+          <li><div><span class="num">TORRAS</span><span><b>Q3 Air &amp; Q3 Air Pro</b>Everyday product storytelling and hands-free filming</span></div></li>
+          <li><div><span class="num">TTArtisan</span><span><b>17mm f/1.8 lens</b>Lens content grounded in everyday photography</span></div></li>
+          <li><div><span class="num">Thypoch</span><span><b>Simera-C lenses</b>Image character and filmmaking tools</span></div></li>
+        </ul>
+        <ul class="ways">
+          <li><b>Social content</b>Reels, TikToks, Shorts and supporting Stories.</li>
+          <li><b>YouTube &amp; education</b>Integrations, dedicated features and tutorials.</li>
+          <li><b>Brand-owned content</b>Product videos and assets for your channels.</li>
+          <li><b>Custom campaigns</b>Multi-video packages, quoted by scope.</li>
+        </ul>
+        <p class="cta"><a class="btn solid" href="mailto:workwithajaythapa@gmail.com?subject=Brand%20partnership">Start a partnership</a> <a class="btn" href="https://www.instagram.com/reel/DXiAFgGkwkE/" target="_blank" rel="noopener">Watch a collaboration ↗</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <p class="eyebrow">04 / About</p>
+        <h2>Nine years, two tracks.</h2>
+        <p>I'm a video producer, editor and videographer who has worked across documentary, music video, branded content, episodic series and short-form social. I started in Kathmandu, spent six years on the core production team at Paradygm TV with Sisan Baniya, and since 2023 I've edited remotely for 40 Days Production in the US.</p>
+        <p>The whole time I've kept my own channel running alongside the client work. I'm now based in Sydney with full Australian working rights, and I'm available immediately.</p>
+      </div>
+      <img src="images/about.jpg" alt="Ajay at his editing desk at night, colour grading in DaVinci Resolve beside a pink lamp." width="1600" height="844" loading="lazy">
+    </div>
+
+    <div class="tl-scroll">
+      <div class="tl" role="img" aria-label="Career timeline, 2013 to 2026. Client track: early career 2013 to 2016, Paradygm TV and Sisan Baniya 2017 to 2023, 40 Days Production 2023 to now. Own track: YouTube channel from 2020 to now.">
+        <div class="tl-years"><span style="border:0"></span><span>2013</span><span>2014</span><span>2015</span><span>2016</span><span>2017</span><span>2018</span><span>2019</span><span>2020</span><span>2021</span><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span></div>
+        <div class="tl-track"><span>Own</span><div class="clip own" style="grid-column: 9 / span 7">My channel: tutorials, films, gear</div></div>
+        <div class="tl-track"><span>Client</span><div class="clip" style="grid-column: 2 / span 4">Early career</div><div class="clip" style="grid-column: 6 / span 6">Paradygm TV &amp; Sisan Baniya</div><div class="clip" style="grid-column: 12 / span 4">40 Days Production</div></div>
+      </div>
+    </div>
+
+    <div class="jobs">
+      <div>
+        <p class="eyebrow">2023 – now</p>
+        <h3>Freelance Video Editor &amp; Production Partner</h3>
+        <p class="where">40 Days Production LLC · US, remote</p>
+        <p>Post-production for podcasts, corporate interviews, product launches and branded campaigns. 20–40 short-form assets per campaign. Post pipeline and workflow for a US TV pilot.</p>
+      </div>
+      <div>
+        <p class="eyebrow">2017 – 2023</p>
+        <h3>Video Producer &amp; Editor, core team</h3>
+        <p class="where">Paradygm TV &amp; Sisan Baniya · Kathmandu</p>
+        <p>Helped grow a YouTube channel from launch to 250K+ subscribers (600K–800K today). Edited music videos with 14M–40M+ views. Led the 9-episode series Miss Nepal 2019 Journey.</p>
+      </div>
+      <div>
+        <p class="eyebrow">2013 – 2016</p>
+        <h3>Videographer &amp; Video Editor</h3>
+        <p class="where">Nepal</p>
+        <p>Music videos and NGO field documentaries from concept to delivery, including 2–3 minute documentary reports on tight turnarounds.</p>
+      </div>
+    </div>
+
+    <div class="kit">
+      <div>
+        <p class="eyebrow">Capabilities</p>
+        <ul><li>Narrative and commercial editing</li><li>Music video structure and rhythm</li><li>Social-first cinematic storytelling</li><li>Colour and post finishing</li><li>Camera, multi-cam and audio</li></ul>
+      </div>
+      <div>
+        <p class="eyebrow">Tools</p>
+        <ul><li>DaVinci Resolve (advanced)</li><li>Adobe Premiere Pro</li><li>After Effects</li><li>Photoshop and Lightroom</li></ul>
+      </div>
+      <div>
+        <p class="eyebrow">Brands I've cut for</p>
+        <ul><li>Tuborg</li><li>Realme</li><li>Skoda</li><li>Yamaha</li><li>TVS</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<section class="contact" id="contact">
+  <img src="images/contact.jpg" alt="Sydney skyline and Opera House across the harbour under an overcast sky." width="2200" height="1238" loading="lazy">
+  <div class="wrap">
+    <p class="eyebrow">05 / Contact</p>
+    <h2>Need an editor, a creator, or both?</h2>
+    <p class="lede">Based in Sydney, working with teams anywhere. Tell me what you're making and when you need it.</p>
+    <p class="cta"><a class="btn solid" href="mailto:workwithajaythapa@gmail.com?subject=Edit%20enquiry">Hire me for an edit</a> <a class="btn" href="mailto:workwithajaythapa@gmail.com?subject=Brand%20partnership">Brand partnership</a></p>
+    <footer>
+      <p><a href="mailto:workwithajaythapa@gmail.com">workwithajaythapa@gmail.com</a></p>
+      <ul>
+        <li><a href="https://www.youtube.com/@AjayThapaMagar" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://www.instagram.com/ajaytm43/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.tiktok.com/@ajaytm43" target="_blank" rel="noopener">TikTok</a></li>
+      </ul>
+      <p>© 2026 Ajay Thapa Magar</p>
+    </footer>
+  </div>
+</section>
+
+<script>
+// 24 fps, 2 px of scroll per frame
+const timecode = f => [f / 86400, f / 1440 % 60, f / 24 % 60, f % 24].map(n => String(Math.floor(n)).padStart(2, '0')).join(':');
+console.assert(timecode(5000) === '00:03:28:08', 'timecode');
+const root = document.documentElement, tc = document.querySelector('.tc');
+const tick = () => {
+  const max = root.scrollHeight - innerHeight;
+  root.style.setProperty('--p', max > 0 ? Math.min(scrollY / max, 1) : 0);
+  tc.textContent = timecode(Math.round(scrollY / 2));
+};
+addEventListener('scroll', tick, { passive: true });
+addEventListener('resize', tick);
+tick();
+
+// loops play on hover where there is a mouse, and while in view on touch screens (and always for the hero)
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const canHover = matchMedia('(hover: hover)').matches;
+  for (const v of document.querySelectorAll('figure video, .hero > video')) {
+    const box = v.parentElement, card = box.closest('.card');
+    const play = () => v.play().catch(() => {}), stop = () => { v.pause(); box.classList.remove('live'); };
+    v.addEventListener('playing', () => box.classList.add('live'));
+    if (card && canHover) { card.addEventListener('mouseenter', play); card.addEventListener('mouseleave', stop); }
+    else new IntersectionObserver(([e]) => e.isIntersecting ? play() : stop(), { threshold: .5 }).observe(box);
+  }
+}
+</script>
+
+</body>
+</html>
