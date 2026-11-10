@@ -72,7 +72,7 @@ section { padding: clamp(72px, 10vw, 150px) 0; }
 
 /* hero: an inset rounded photo, like a print laid on the page */
 .hero { position: relative; margin: 64px 12px 0; border-radius: var(--r); overflow: hidden; min-height: calc(100svh - 76px); display: flex; align-items: flex-end; padding: 120px 0 clamp(32px, 5vw, 64px); color: #fff; }
-.hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 30%; }
+.hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
 .hero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(32,24,16,.9) 0%, rgba(32,24,16,.5) 38%, transparent 70%); }
 .hero .wrap { position: relative; z-index: 2; width: 100%; }
 .hero .eyebrow, .hero h1 { color: #fff; }
@@ -89,6 +89,14 @@ section { padding: clamp(72px, 10vw, 150px) 0; }
 .num { display: block; font-size: clamp(2rem, 4.4vw, 4rem); font-weight: 600; }
 .proof .num { font-size: clamp(1.7rem, 3.4vw, 3.25rem); white-space: nowrap; }
 .proof small { display: block; margin-top: .6em; font-size: .9rem; color: var(--muted); line-height: 1.35; }
+
+/* reels: a poster with a play button that swaps to the YouTube player on click */
+.reels { padding-bottom: 0; }
+.reels h2 { margin: .3em 0 .8em; }
+.yt { position: absolute; inset: 0; display: block; }
+.yt span { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); padding: 1.1em 1.9em; border-radius: 999px; background: var(--brown); color: var(--on-accent); font: 700 .76rem/1 var(--mono); letter-spacing: .16em; text-transform: uppercase; white-space: nowrap; transition: background .2s; }
+.yt:hover span { background: var(--head); }
+.card figure iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
 /* two sides */
 .sides h2 { max-width: 14em; }
@@ -198,7 +206,7 @@ footer a:hover { color: var(--orange); }
 /* loops: a silent clip sits over each still and fades in while it plays */
 .card figure { position: relative; }
 figure video, .hero > video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .45s; }
-.hero > video { object-position: 60% 30%; }
+.hero > video { object-position: 50% 30%; }
 .live > video { opacity: 1; }
 .card figure:has(video)::after { content: "\25B6  LOOP"; position: absolute; left: 12px; bottom: 12px; padding: 5px 9px; border-radius: 3px; background: rgba(20,16,12,.62); color: #fff; font: 700 .6rem var(--mono); letter-spacing: .16em; transition: opacity .3s; }
 .card figure.live::after { opacity: 0; }
@@ -226,7 +234,6 @@ figure video, .hero > video { position: absolute; inset: 0; width: 100%; height:
 @media (max-width: 860px) {
   .nav ul li:not(:last-child) { display: none; }
   .frame-note { display: none; }
-  .hero > img { object-position: 66% 30%; } /* portrait crop: keep the face */
   .proof ul { grid-template-columns: 1fr 1fr; }
   .proof li:nth-child(3) { padding-left: 0; border-left: 0; }
   .proof li:nth-child(n+3) { border-top: 1px solid var(--line); }
@@ -270,14 +277,14 @@ figure video, .hero > video { position: absolute; inset: 0; width: 100%; height:
 <main id="top">
 
 <header class="hero">
-  <img src="images/hero.jpg" alt="Ajay in a cap and purple hoodie working on a laptop in a warm-lit room with plants and a guitar amp." width="2400" height="1350" fetchpriority="high">
+  <img src="images/hero.jpg" alt="A man in a fur hat blows on a small fire in the snow at night." width="2400" height="1000" fetchpriority="high">
   <video muted loop playsinline preload="none" src="loops/hero.mp4" aria-hidden="true" tabindex="-1"></video>
-  <p class="frame-note">Frame from <em>Aadima</em></p>
+  <p class="frame-note">Playing: my narrative reel</p>
   <div class="wrap">
     <p class="eyebrow">Editor · Filmmaker · Creator &nbsp;/&nbsp; Sydney, Australia</p>
     <h1>Ajay Thapa Magar</h1>
     <p class="lede">I edit commercials, music videos and documentaries for other people. I also shoot, cut and publish my own films for 60K subscribers on YouTube. Both are rooted in emotion and pace.</p>
-    <p class="cta"><a class="btn solid" href="#clients">See the work</a> <a class="btn" href="#contact">Get in touch</a></p>
+    <p class="cta"><a class="btn solid" href="#reels">Watch the reels</a> <a class="btn" href="#contact">Get in touch</a></p>
   </div>
 </header>
 
@@ -289,6 +296,31 @@ figure video, .hero > video { position: absolute; inset: 0; width: 100%; height:
     <li><span class="num">2.29M</span><small>views on my own channel</small></li>
   </ul>
 </div>
+
+<section class="reels" id="reels">
+  <div class="wrap">
+    <p class="eyebrow">Reels</p>
+    <h2>Start here. Under a minute each.</h2>
+    <div class="grid">
+      <article class="card">
+        <figure><a class="yt" href="https://youtu.be/Yzz5KnuB6WQ" data-yt="Yzz5KnuB6WQ" target="_blank" rel="noopener"><img src="images/reel-commercial.jpg" alt="A figure stands on a car roof filming a desert road at golden hour." width="1600" height="900" loading="lazy"><span>&#9654; Play</span></a></figure>
+        <div class="body">
+          <h3>Commercial reel</h3>
+          <p class="kind">36 sec</p>
+          <p class="desc">Launch films, TVCs and brand campaigns.</p>
+        </div>
+      </article>
+      <article class="card">
+        <figure><a class="yt" href="https://youtu.be/XGMUe-cDhp0" data-yt="XGMUe-cDhp0" target="_blank" rel="noopener"><img src="images/reel-narrative.jpg" alt="A man in a fur hat holds a burning torch up in the dark." width="1600" height="900" loading="lazy"><span>&#9654; Play</span></a></figure>
+        <div class="body">
+          <h3>Narrative reel</h3>
+          <p class="kind">51 sec</p>
+          <p class="desc">Narrative, documentary and indie work.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
 <section class="sides">
   <div class="wrap">
@@ -641,6 +673,12 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
     else new IntersectionObserver(([e]) => e.isIntersecting ? play() : stop(), { threshold: .5 }).observe(box);
   }
 }
+
+// reels: without JS the poster is a plain link to YouTube
+for (const a of document.querySelectorAll('.yt')) a.addEventListener('click', e => {
+  e.preventDefault();
+  a.outerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${a.dataset.yt}?autoplay=1&rel=0" title="${a.closest('.card').querySelector('h3').textContent}" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+});
 </script>
 
 </body>
