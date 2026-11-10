@@ -225,6 +225,17 @@ figure video, .hero > video { position: absolute; inset: 0; width: 100%; height:
 .screening + .work { padding-top: clamp(72px, 10vw, 150px); }
 .screening + .work header { border-top: 0; padding-top: 0; }
 
+/* vlogs: the long-form body of work, as a list instead of cards */
+.vlogs { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(32px, 6vw, 100px); align-items: start; margin-top: clamp(56px, 7vw, 110px); padding-top: 32px; border-top: 1px solid var(--line); }
+.vlogs h3 { font-size: clamp(1.9rem, 3.4vw, 2.9rem); margin: .3em 0 .45em; }
+.vlogs p { max-width: 30em; }
+.vlogs .total { margin: 1.2em 0 1.4em; color: #A9A391; }
+.vlogs .total .num { color: #F4F1E6; }
+.vlogs .rows .num { color: #F4F1E6; }
+.vlogs .rows b { color: #E9E5D8; }
+.vlogs .fine { margin-top: 12px; color: #A9A391; }
+.screening .btn { border-color: #C8A27C; }
+
 /* playhead: scroll position as a line under the nav, with a running timecode readout in it */
 .playhead { position: fixed; top: 64px; left: 0; z-index: 10; height: 2px; width: calc(var(--p, 0) * 100%); background: var(--orange); pointer-events: none; }
 .tc { margin: 0 auto 0 28px; font: 700 .7rem var(--mono); letter-spacing: .1em; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
@@ -237,7 +248,7 @@ figure video, .hero > video { position: absolute; inset: 0; width: 100%; height:
   .proof ul { grid-template-columns: 1fr 1fr; }
   .proof li:nth-child(3) { padding-left: 0; border-left: 0; }
   .proof li:nth-child(n+3) { border-top: 1px solid var(--line); }
-  .sides .cols, .grid, .channel .cols, .about .top, .jobs { grid-template-columns: 1fr; }
+  .sides .cols, .grid, .channel .cols, .about .top, .jobs, .vlogs { grid-template-columns: 1fr; }
   .stats { grid-template-columns: 1fr 1fr; }
   .kit { grid-template-columns: 1fr 1fr; }
   .card.feature figure { aspect-ratio: 16 / 9; }
@@ -433,6 +444,25 @@ figure video, .hero > video { position: absolute; inset: 0; width: 100%; height:
       </article>
 
     </div>
+    <div class="vlogs">
+      <div>
+        <p class="eyebrow">Long-form · 2017 – 2022</p>
+        <h3>34 vlogs for Sisan Baniya</h3>
+        <p>Travel and adventure vlogs for Sisan Baniya and Paradygm TV. I edited all of them and helped on the shoots. Eight passed half a million views.</p>
+        <p class="total"><span class="num">12M+</span> combined views</p>
+        <p><a class="btn" href="https://www.youtube.com/playlist?list=PLNbaG4O7whC5SZJSqboFoNaVRxnGrXg8k" target="_blank" rel="noopener">Watch the playlist ↗</a></p>
+      </div>
+      <div>
+        <ul class="rows">
+        <li><a href="https://www.youtube.com/watch?v=CzBU46ZIE78" target="_blank" rel="noopener"><span class="num">1.5M</span><span><b>The Annapurna Experience</b>ABC Trek</span><i>↗</i></a></li>
+        <li><a href="https://www.youtube.com/watch?v=bdClqMqL1fg" target="_blank" rel="noopener"><span class="num">958K</span><span><b>Shey Phoksundo Trek</b>Paradygm</span><i>↗</i></a></li>
+        <li><a href="https://www.youtube.com/watch?v=NRH3PsIvsjQ" target="_blank" rel="noopener"><span class="num">785K</span><span><b>White House</b>Awesome Saturdays</span><i>↗</i></a></li>
+        <li><a href="https://www.youtube.com/watch?v=JVhfKIhxK7g" target="_blank" rel="noopener"><span class="num">652K</span><span><b>To the Mountains</b>Manang on a scooter, with Yamaha</span><i>↗</i></a></li>
+        <li><a href="https://www.youtube.com/watch?v=oswEGYDNFUw" target="_blank" rel="noopener"><span class="num">636K</span><span><b>Kalimpong, Day 2</b>With Bipul Chettri</span><i>↗</i></a></li>
+        </ul>
+        <p class="fine">Most watched of the 34. YouTube view counts, November 2026.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -582,9 +612,9 @@ figure video, .hero > video { position: absolute; inset: 0; width: 100%; height:
     </div>
 
     <div class="tl-scroll">
-      <div class="tl" role="img" aria-label="Career timeline, 2013 to 2026. Client track: early career 2013 to 2016, Paradygm TV and Sisan Baniya 2017 to 2023, 40 Days Production 2023 to now. Own track: YouTube channel from 2020 to now.">
+      <div class="tl" role="img" aria-label="Career timeline, 2013 to 2026. Client track: early career 2013 to 2016, Paradygm TV and Sisan Baniya 2017 to 2023, 40 Days Production 2023 to now. Own track: YouTube channel from 2017 to now.">
         <div class="tl-years"><span style="border:0"></span><span>2013</span><span>2014</span><span>2015</span><span>2016</span><span>2017</span><span>2018</span><span>2019</span><span>2020</span><span>2021</span><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span></div>
-        <div class="tl-track"><span>Own</span><div class="clip own" style="grid-column: 9 / span 7">My channel: tutorials, films, gear</div></div>
+        <div class="tl-track"><span>Own</span><div class="clip own" style="grid-column: 6 / span 10">My channel: music, tutorials, films</div></div>
         <div class="tl-track"><span>Client</span><div class="clip" style="grid-column: 2 / span 4">Early career</div><div class="clip" style="grid-column: 6 / span 6">Paradygm TV &amp; Sisan Baniya</div><div class="clip" style="grid-column: 12 / span 4">40 Days Production</div></div>
       </div>
     </div>
